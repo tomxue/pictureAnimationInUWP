@@ -1,0 +1,69 @@
+﻿<Page
+    x:Class="App12.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App12"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Resources>
+        <Storyboard x:Key="std" x:Name="std2" RepeatBehavior="Forever" AutoReverse="True">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="image1" Storyboard.TargetProperty="Source">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.01" Value="Assets/1.png"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.06" Value="Assets/2.png"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.09" Value="Assets/3.png"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.12" Value="Assets/4.png"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.15" Value="Assets/5.png"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.18" Value="Assets/6.png"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.21" Value="Assets/7.png"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.24" Value="Assets/8.png"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.27" Value="Assets/9.png"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.30" Value="Assets/10.png"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.33" Value="Assets/11.png"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.36" Value="Assets/12.png"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.39" Value="Assets/13.png"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.42" Value="Assets/14.png"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+    </Page.Resources>
+
+    <Grid>
+        <Border BorderBrush="Red" BorderThickness="3" Width="500" Height="200" VerticalAlignment="Top">
+            <Image x:Name="img">
+                <!--do not set the Source here-->
+                <Image.Triggers>
+                    <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard RepeatBehavior="Forever">
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="img"
+                                           Storyboard.TargetProperty="Source">
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.01" Value="Assets/1.png"/>
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.06" Value="Assets/2.png"/>
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.09" Value="Assets/3.png"/>
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.12" Value="Assets/4.png"/>
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.15" Value="Assets/5.png"/>
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.18" Value="Assets/6.png"/>
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.21" Value="Assets/7.png"/>
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.24" Value="Assets/8.png"/>
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.27" Value="Assets/9.png"/>
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.30" Value="Assets/10.png"/>
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.33" Value="Assets/11.png"/>
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.36" Value="Assets/12.png"/>
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.39" Value="Assets/13.png"/>
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.42" Value="Assets/14.png"/>
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Image.Triggers>
+            </Image>
+        </Border>
+
+        <Border BorderBrush="Blue" BorderThickness="3" Width="500" Height="200" VerticalAlignment="Bottom">
+            <Image x:Name="image1"/>
+        </Border>
+        <Button x:Name="button" Content="Button" Margin="0,280,0,0" VerticalAlignment="Top" Height="110" Width="200" Click="button_Click" HorizontalAlignment="Center"/>
+    </Grid>
+</Page>
