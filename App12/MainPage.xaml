@@ -65,5 +65,7 @@
             <Image x:Name="image1"/>
         </Border>
         <Button x:Name="button" Content="Button" Margin="0,280,0,0" VerticalAlignment="Top" Height="110" Width="200" Click="button_Click" HorizontalAlignment="Center"/>
+
+        <Image x:Name="myWaveGif" Source="Assets/wave.gif" VerticalAlignment="Center"/>
     </Grid>
 </Page>
