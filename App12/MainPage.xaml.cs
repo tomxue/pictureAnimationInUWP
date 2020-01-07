@@ -27,7 +27,12 @@ namespace App12
             this.InitializeComponent();
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void Image1_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void button_Click_1(object sender, RoutedEventArgs e)
         {
             std2.Begin();
         }

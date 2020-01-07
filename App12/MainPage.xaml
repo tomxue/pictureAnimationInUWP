@@ -8,64 +8,50 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Page.Resources>
-        <Storyboard x:Key="std" x:Name="std2" RepeatBehavior="Forever" AutoReverse="True">
-            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="image1" Storyboard.TargetProperty="Source">
-                <DiscreteObjectKeyFrame KeyTime="0:0:0.01" Value="Assets/1.png"/>
-                <DiscreteObjectKeyFrame KeyTime="0:0:0.06" Value="Assets/2.png"/>
-                <DiscreteObjectKeyFrame KeyTime="0:0:0.09" Value="Assets/3.png"/>
-                <DiscreteObjectKeyFrame KeyTime="0:0:0.12" Value="Assets/4.png"/>
-                <DiscreteObjectKeyFrame KeyTime="0:0:0.15" Value="Assets/5.png"/>
-                <DiscreteObjectKeyFrame KeyTime="0:0:0.18" Value="Assets/6.png"/>
-                <DiscreteObjectKeyFrame KeyTime="0:0:0.21" Value="Assets/7.png"/>
-                <DiscreteObjectKeyFrame KeyTime="0:0:0.24" Value="Assets/8.png"/>
-                <DiscreteObjectKeyFrame KeyTime="0:0:0.27" Value="Assets/9.png"/>
-                <DiscreteObjectKeyFrame KeyTime="0:0:0.30" Value="Assets/10.png"/>
-                <DiscreteObjectKeyFrame KeyTime="0:0:0.33" Value="Assets/11.png"/>
-                <DiscreteObjectKeyFrame KeyTime="0:0:0.36" Value="Assets/12.png"/>
-                <DiscreteObjectKeyFrame KeyTime="0:0:0.39" Value="Assets/13.png"/>
-                <DiscreteObjectKeyFrame KeyTime="0:0:0.42" Value="Assets/14.png"/>
-            </ObjectAnimationUsingKeyFrames>
-        </Storyboard>
-    </Page.Resources>
-
     <Grid>
-        <Border BorderBrush="Red" BorderThickness="3" Width="500" Height="200" VerticalAlignment="Top">
-            <Image x:Name="img">
-                <!--do not set the Source here-->
-                <Image.Triggers>
-                    <EventTrigger RoutedEvent="FrameworkElement.Loaded">
-                        <BeginStoryboard>
-                            <Storyboard RepeatBehavior="Forever">
-                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="img"
-                                           Storyboard.TargetProperty="Source">
-                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.01" Value="Assets/1.png"/>
-                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.06" Value="Assets/2.png"/>
-                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.09" Value="Assets/3.png"/>
-                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.12" Value="Assets/4.png"/>
-                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.15" Value="Assets/5.png"/>
-                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.18" Value="Assets/6.png"/>
-                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.21" Value="Assets/7.png"/>
-                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.24" Value="Assets/8.png"/>
-                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.27" Value="Assets/9.png"/>
-                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.30" Value="Assets/10.png"/>
-                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.33" Value="Assets/11.png"/>
-                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.36" Value="Assets/12.png"/>
-                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.39" Value="Assets/13.png"/>
-                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.42" Value="Assets/14.png"/>
-                                </ObjectAnimationUsingKeyFrames>
-                            </Storyboard>
-                        </BeginStoryboard>
-                    </EventTrigger>
-                </Image.Triggers>
-            </Image>
-        </Border>
+        <Grid.Resources>
+            <BitmapImage x:Key="key1" UriSource="Assets/1.png" />
+            <BitmapImage x:Key="key2" UriSource="Assets/2.png" />
+            <BitmapImage x:Key="key3" UriSource="Assets/3.png" />
+            <BitmapImage x:Key="key4" UriSource="Assets/4.png" />
+            <BitmapImage x:Key="key5" UriSource="Assets/5.png" />
+            <BitmapImage x:Key="key6" UriSource="Assets/6.png" />
+            <BitmapImage x:Key="key7" UriSource="Assets/7.png" />
+            <BitmapImage x:Key="key8" UriSource="Assets/8.png" />
+            <BitmapImage x:Key="key9" UriSource="Assets/9.png" />
+            <BitmapImage x:Key="key10" UriSource="Assets/10.png" />
+            <BitmapImage x:Key="key11" UriSource="Assets/11.png" />
+            <BitmapImage x:Key="key12" UriSource="Assets/12.png" />
+            <BitmapImage x:Key="key13" UriSource="Assets/13.png" />
+            <BitmapImage x:Key="key14" UriSource="Assets/14.png" />
 
-        <Border BorderBrush="Blue" BorderThickness="3" Width="500" Height="200" VerticalAlignment="Bottom">
-            <Image x:Name="image1"/>
-        </Border>
-        <Button x:Name="button" Content="Button" Margin="0,280,0,0" VerticalAlignment="Top" Height="110" Width="200" Click="button_Click" HorizontalAlignment="Center"/>
+            <Storyboard
+            x:Key="std"
+            x:Name="std2"
+            AutoReverse="False"
+            RepeatBehavior="Forever"
+            >
+                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="image1" Storyboard.TargetProperty="Source">
+                    <DiscreteObjectKeyFrame KeyTime="0:0:0.04" Value="{StaticResource key1}" />
+                    <DiscreteObjectKeyFrame KeyTime="0:0:0.08" Value="{StaticResource key2}" />
+                    <DiscreteObjectKeyFrame KeyTime="0:0:0.12" Value="{StaticResource key3}" />
+                    <DiscreteObjectKeyFrame KeyTime="0:0:0.16" Value="{StaticResource key4}" />
+                    <DiscreteObjectKeyFrame KeyTime="0:0:0.20" Value="{StaticResource key5}" />
+                    <DiscreteObjectKeyFrame KeyTime="0:0:0.24" Value="{StaticResource key6}" />
+                    <DiscreteObjectKeyFrame KeyTime="0:0:0.28" Value="{StaticResource key7}" />
+                    <DiscreteObjectKeyFrame KeyTime="0:0:0.32" Value="{StaticResource key8}" />
+                    <DiscreteObjectKeyFrame KeyTime="0:0:0.36" Value="{StaticResource key9}" />
+                    <DiscreteObjectKeyFrame KeyTime="0:0:0.40" Value="{StaticResource key10}" />
+                    <DiscreteObjectKeyFrame KeyTime="0:0:0.44" Value="{StaticResource key11}" />
+                    <DiscreteObjectKeyFrame KeyTime="0:0:0.48" Value="{StaticResource key12}" />
+                    <DiscreteObjectKeyFrame KeyTime="0:0:0.52" Value="{StaticResource key13}" />
+                    <DiscreteObjectKeyFrame KeyTime="0:0:0.56" Value="{StaticResource key14}" />
+                </ObjectAnimationUsingKeyFrames>
+            </Storyboard>
+        </Grid.Resources>
 
-        <Image x:Name="myWaveGif" Source="Assets/wave.gif" VerticalAlignment="Center"/>
+        <Image x:Name="image1" Width="1200" Height="800" HorizontalAlignment="Center" VerticalAlignment="Center" Loaded="Image1_Loaded"/>
+        <Button x:Name="button" Content="Button" Margin="470,500,0,0" VerticalAlignment="Top" RenderTransformOrigin="-3.548,1.094" Click="button_Click_1"/>
+        <Image x:Name="image2" Source="Assets/wave.gif" VerticalAlignment="Bottom"/>
     </Grid>
 </Page>
